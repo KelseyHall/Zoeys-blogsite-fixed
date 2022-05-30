@@ -3,7 +3,6 @@ import homebanner from '../../img/home-banner.jpeg';
 
 import LatestsBlogPost from './latests posts/latestspost';
 const HomePage = () => {
-  console.log(process.env);
   return (
     <Container maxWidth="xl">
       <Container

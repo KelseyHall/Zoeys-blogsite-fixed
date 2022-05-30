@@ -1,9 +1,8 @@
 const contentful = require('contentful');
-const tempSpace = 'hger3rgtt3';
-const tempAccessToken = 'hsfsf8r39wr42hjgdsgfusg8t3';
+
 const client = contentful.createClient({
-  space: tempSpace, //space ID
-  accessToken: tempAccessToken, //content delivery API - access token
+  space: process.env.REACT_APP_SPACE_KEY, //space ID
+  accessToken: process.env.REACT_APP_ACCESS_TOKEN, //content delivery API - access token
 });
 let rawBlogEntryData = [];
 let blogEntryData = rawBlogEntryData.sort((a, b) => b.date - a.date);
