@@ -7,7 +7,7 @@ import BlogPostRouter from './blog posts page/blogRouter';
 const BlogPage = () => {
   return (
     <Container maxWidth="xl">
-      <Typography variant="h1">Blog Posts</Typography>
+      <Typography variant="h1">Blog Posts </Typography>
       <Container
         sx={{
           borderTop: { lg: '8px solid' },

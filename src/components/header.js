@@ -11,8 +11,12 @@ import {
   Button,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import { NavLink } from 'react-router-dom';
 
-const pages = ['about me', 'blog posts'];
+const pages = [
+  { title: 'about me', path: '/about' },
+  { title: 'blog posts', path: '/blog' },
+];
 
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -72,10 +76,12 @@ const Header = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center" color="secondary.main">
-                    {page}
-                  </Typography>
+                <MenuItem key={page.title} onClick={handleCloseNavMenu}>
+                  <NavLink to={page.path} style={{ textDecoration: 'none' }}>
+                    <Typography textAlign="center" color="secondary.main">
+                      {page.title}
+                    </Typography>
+                  </NavLink>
                 </MenuItem>
               ))}
             </Menu>
@@ -100,14 +106,23 @@ const Header = () => {
             }}
           >
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                className="nav-buttons"
-                sx={{ my: 2, color: 'secondary.main', display: 'block' }}
+              <NavLink
+                key={page.title}
+                to={page.path}
+                style={{ textDecoration: 'none' }}
               >
-                {page}
-              </Button>
+                <Button
+                  onClick={handleCloseNavMenu}
+                  className="nav-buttons"
+                  sx={{
+                    my: 2,
+                    color: 'secondary.main',
+                    display: 'block',
+                  }}
+                >
+                  {page.title}
+                </Button>
+              </NavLink>
             ))}
           </Box>
         </Toolbar>
