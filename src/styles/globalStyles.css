@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Prompt&family=Ubuntu:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+:root {
+  --logo-color: #154c4b;
+  --logo-subline-color: #150f0a;
+  --main-background: #edf1f2;
+  --accents-banners: #783e23;
+}
+/* h1 {
+  font-family: 'Dancing Script', cursive;
+} */
+
+/* h2 {
+  font-family: 'Prompt', sans-serif;
+}
+body {
+  font-family: 'Ubuntu', sans-serif;
+} */
+body {
+  background-color: var(--main-background);
+}
+.headerLogo a {
+  text-decoration: none;
+}
+.headerLogo {
+  width: 40%;
+  text-align: end;
+  padding-top: 10px;
+}
+.mainLogo {
+  font-family: 'BerkShire Swash', cursive;
+  color: var(--logo-color);
+  display: block;
+  font-size: 1.5em;
+  line-height: 1.2;
+}
+.logoSubline {
+  font-family: 'Dancing Script', cursive;
+  color: var(--logo-subline-color);
+
+  display: block;
+  font-size: 1em;
+  line-height: 1.2;
+}
+.smallSignature {
+  font-family: 'BerkShire Swash', cursive;
+}
