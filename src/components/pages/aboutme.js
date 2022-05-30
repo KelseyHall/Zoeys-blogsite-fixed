@@ -1,8 +1,10 @@
+import { Container, Typography } from '@mui/material';
+
 const AboutMe = () => {
   return (
-    <div>
-      <h1>About me</h1>
-    </div>
+    <Container maxWidth="xl">
+      <Typography variant="h1">Who Am I?</Typography>
+    </Container>
   );
 };
 
