@@ -1,6 +1,7 @@
 import { Container, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import selfie from '../../img/IMG_3475.jpeg';
+import ZoeySignature from '../signature';
 
 const AboutMe = () => {
   return (
@@ -59,6 +60,7 @@ const AboutMe = () => {
         vel odio leo viverra tempus feugiat. Sagittis massa aenean tortor eget
         lacus.
       </Typography>
+      <ZoeySignature />
     </Container>
   );
 };
