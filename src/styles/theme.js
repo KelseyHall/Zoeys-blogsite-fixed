@@ -65,6 +65,8 @@ const theme = createTheme({
     signature: {
       fontFamily: "'BerkShire Swash', cursive",
       fontSize: '1.5em',
+      textAlign: 'right',
+      display: 'block',
       ':before': {
         fontFamily: 'Arial',
         content: "'•'",

@@ -59,8 +59,8 @@ const AboutMe = () => {
         Egestas vitae nisi fermentum et pharetra ac tellus molestie. Nulla fusce
         vel odio leo viverra tempus feugiat. Sagittis massa aenean tortor eget
         lacus.
+        <ZoeySignature />
       </Typography>
-      <ZoeySignature />
     </Container>
   );
 };
