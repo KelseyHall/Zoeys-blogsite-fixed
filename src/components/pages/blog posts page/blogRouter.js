@@ -46,13 +46,17 @@ const Post = ({ title, date }) => {
         }}
       >
         {/* to display individual post */}
-        {blogEntry ? (
-          //display post depending from pick post menu
+        {blogEntryData.length > 0 ? (
+          blogEntry ? (
+            //display post depending from pick post menu
 
-          <IndividualPost data={blogEntry} />
+            <IndividualPost data={blogEntry} />
+          ) : (
+            //display latest post as default
+            <IndividualPost data={blogEntryData[0]} />
+          )
         ) : (
-          //display latest post as default
-          <IndividualPost data={blogEntryData[0]} />
+          <Typography variant="body1">trouble loading...</Typography>
         )}
       </Container>
 
