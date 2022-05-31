@@ -1,4 +1,5 @@
 import { Typography, Box, Container } from '@mui/material';
+import ZoeySignature from '../../signature';
 
 const IndividualPost = ({ data }) => {
   return (
@@ -39,6 +40,7 @@ const IndividualPost = ({ data }) => {
         sx={{ textAlign: 'justify', paddingTop: '20px' }}
       >
         {data.post}
+        <ZoeySignature />
       </Typography>
     </Container>
   );

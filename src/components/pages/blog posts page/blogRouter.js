@@ -1,4 +1,4 @@
-import { Container, Typography } from '@mui/material';
+import { Container, Typography, Button } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
 import { useLocation } from 'react-router-dom';
@@ -56,11 +56,20 @@ const Post = ({ title, date }) => {
             <IndividualPost data={blogEntryData[0]} />
           )
         ) : (
-          <Typography variant="body1">trouble loading...</Typography>
+          <Typography variant="body1">trouble loading..</Typography>
         )}
       </Container>
+      <Container
+        maxWidth="xl"
+        sx={{ display: 'flex', justifyContent: 'space-between' }}
+      >
+        <Button color="secondary">{`<-- Prev Post`}</Button>
 
-      <Typography variant="body1">{`${blogNumber}/${blogEntryData.length}`}</Typography>
+        <Typography variant="body1">{`${blogNumber === 0 ? 1 : blogNumber}/${
+          blogEntryData.length
+        }`}</Typography>
+        <Button color="secondary">{`Next Post -->`}</Button>
+      </Container>
     </Box>
   );
 };
