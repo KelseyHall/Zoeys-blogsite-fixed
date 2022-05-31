@@ -14,7 +14,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { NavLink } from 'react-router-dom';
 
 const pages = [
-  { title: 'about me', path: '/about' },
+  { title: 'about me', path: '/aboutme' },
   { title: 'blog posts', path: '/blog' },
 ];
 

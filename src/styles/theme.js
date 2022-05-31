@@ -52,6 +52,7 @@ const theme = createTheme({
     h3: {
       fontFamily: "'Ubuntu', sans-serif",
     },
+
     subtitle1: {
       fontFamily: "'Prompt', sans-serif",
     },
@@ -60,6 +61,20 @@ const theme = createTheme({
     },
     body1: {
       fontFamily: "'Prompt', sans-serif",
+    },
+    signature: {
+      fontFamily: "'BerkShire Swash', cursive",
+      fontSize: '1.5em',
+      textAlign: 'right',
+      display: 'block',
+      ':before': {
+        fontFamily: 'Arial',
+        content: "'•'",
+        fontSize: '1.3em',
+        lineHeight: '1',
+        marginRight: '10px',
+        color: '#bf6336',
+      },
     },
   },
 });
