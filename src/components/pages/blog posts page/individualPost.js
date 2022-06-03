@@ -1,4 +1,5 @@
 import { Typography, Box, Container } from '@mui/material';
+import ZoeySignature from '../../signature';
 
 const IndividualPost = ({ data }) => {
   return (
@@ -14,7 +15,7 @@ const IndividualPost = ({ data }) => {
         sx={{
           width: { xs: '100%', sm: '50%' },
           float: { xs: 'none', sm: 'left' },
-          padding: '0 10px 10px 0',
+          padding: '0 10px 0 0',
         }}
         src={data.img}
         alt={data.imgAlt}
@@ -39,6 +40,7 @@ const IndividualPost = ({ data }) => {
         sx={{ textAlign: 'justify', paddingTop: '20px' }}
       >
         {data.post}
+        <ZoeySignature />
       </Typography>
     </Container>
   );

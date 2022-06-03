@@ -1,7 +1,7 @@
-import { Container, Typography } from '@mui/material';
+import { Container, Typography, Button } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import blogEntryData from '../../../contentful';
 import IndividualPost from '../blog posts page/individualPost';
 
@@ -33,7 +33,8 @@ const sortPostToDisplay = (title, date) => {
 };
 const Post = ({ title, date }) => {
   const blogEntry = blogEntryData.find(sortPostToDisplay(title, date));
-  const blogNumber = blogEntryData.indexOf(blogEntry) + 1;
+  const blogNumber = blogEntryData.indexOf(blogEntry);
+  const PrevPost = () => console.log(blogNumber); //`?title=${blogEntry.urlLink}&date=${blogEntry.date}`
   return (
     <Box component="div">
       <Container
@@ -43,20 +44,34 @@ const Post = ({ title, date }) => {
           borderBottom: { xs: '8px solid', lg: 'none' },
           borderColor: { xs: 'primary.main' },
           padding: '30px 0',
+          overFlow: 'hidden',
         }}
       >
         {/* to display individual post */}
-        {blogEntry ? (
-          //display post depending from pick post menu
+        {blogEntryData.length > 0 ? (
+          blogEntry ? (
+            //display post depending from pick post menu
 
-          <IndividualPost data={blogEntry} />
+            <IndividualPost data={blogEntry} />
+          ) : (
+            //display latest post as default
+            <IndividualPost data={blogEntryData[0]} />
+          )
         ) : (
-          //display latest post as default
-          <IndividualPost data={blogEntryData[0]} />
+          <Typography variant="body1">trouble loading..</Typography>
         )}
       </Container>
+      <Container
+        maxWidth="xl"
+        sx={{ display: 'flex', justifyContent: 'space-between' }}
+      >
+        <Button onClick={PrevPost} color="secondary">{`<-- Prev Post`}</Button>
 
-      <Typography variant="body1">{`${blogNumber}/${blogEntryData.length}`}</Typography>
+        <Typography variant="body1">{`${blogNumber < 1 ? 1 : blogNumber + 1}/${
+          blogEntryData.length
+        }`}</Typography>
+        <Button color="secondary">{`Next Post -->`}</Button>
+      </Container>
     </Box>
   );
 };
