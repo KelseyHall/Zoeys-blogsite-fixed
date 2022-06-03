@@ -67,7 +67,7 @@ const Post = ({ title, date }) => {
       >
         <Button onClick={PrevPost} color="secondary">{`<-- Prev Post`}</Button>
 
-        <Typography variant="body1">{`${blogNumber + 1}/${
+        <Typography variant="body1">{`${blogNumber < 1 ? 1 : blogNumber + 1}/${
           blogEntryData.length
         }`}</Typography>
         <Button color="secondary">{`Next Post -->`}</Button>
