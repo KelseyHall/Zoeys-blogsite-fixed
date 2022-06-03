@@ -15,7 +15,7 @@ const IndividualPost = ({ data }) => {
         sx={{
           width: { xs: '100%', sm: '50%' },
           float: { xs: 'none', sm: 'left' },
-          padding: '0 10px 10px 0',
+          padding: '0 10px 0 0',
         }}
         src={data.img}
         alt={data.imgAlt}
