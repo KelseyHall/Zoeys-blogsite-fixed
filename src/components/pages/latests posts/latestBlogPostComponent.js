@@ -7,6 +7,7 @@ import {
   CardMedia,
   Typography,
 } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const indexOddorEven = (num) => num % 2 === 0;
 
@@ -28,6 +29,8 @@ const LatestBlogPostComponent = (data) => {
       }}
     >
       <CardActionArea
+        component={Link}
+        to={`/blog?title=${data.title.replaceAll(' ', '-')}&date=${data.date}`}
         sx={{
           display: { xs: 'flex', sm: 'grid', md: 'flex' },
           gridTemplateColumns: { sm: 'repeat(8, 1fr)' },

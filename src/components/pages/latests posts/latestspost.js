@@ -4,11 +4,6 @@ import blogEntryData from '../../../contentful';
 import { Container } from '@mui/material';
 
 const LatestsBlogPost = () => {
-  //   console.log(blogEntryData.indexOf());
-  //   const borderColour = () =>{
-  //       if(blogEntryData.indexOf())
-  //   }
-
   return (
     <Container
       sx={{
