@@ -5,6 +5,7 @@ import Header from './components/header';
 import theme from './styles/theme';
 import './styles/globalStyles.css';
 import RouterSwitch from './components/router/Router';
+import Footer from './components/footer';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <RouterSwitch />
         </BrowserRouter>
       </div>
+      <Footer />
     </ThemeProvider>
   );
 }

@@ -18,17 +18,22 @@ const AboutMe = () => {
 
       <Container
         sx={{
+          display: { xs: 'flex' },
+          alignItems: { xs: 'center' },
           float: { xs: 'none', sm: 'right' },
-          width: { xs: '100%', sm: '60%', md: '50%' },
+          width: { xs: '100%', sm: '65%', md: '50%' },
+          height: { xs: '250px', sm: 'auto' },
           shapeOutside: 'circle()',
-          margin: { xs: 'auto', sm: '0' },
+          margin: { xs: '20px auto 0', sm: '0' },
         }}
       >
         <Box
           component="img"
           src={selfie}
           sx={{
-            width: '100%',
+            margin: { xs: '0 auto' },
+            width: { xs: 'auto', sm: '100%' },
+            height: { xs: '340px', sm: 'auto' },
             clipPath: 'circle(42.0% at 50% 50%)',
           }}
         />
@@ -36,7 +41,7 @@ const AboutMe = () => {
       <Typography
         variant="body1"
         sx={{
-          width: { xs: '100%', sm: '70%' },
+          width: { xs: '100%', sm: '80%' },
           float: 'none',
           paddingTop: '30px',
         }}

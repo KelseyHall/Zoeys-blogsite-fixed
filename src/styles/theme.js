@@ -29,6 +29,7 @@ const theme = createTheme({
       fontFamily: "'Dancing Script', cursive",
       fontSize: '2.8em',
       textAlign: 'center',
+      margin: '30px 0 10px',
       ':after': {
         fontFamily: 'Arial',
         content: "'•'",
@@ -75,6 +76,10 @@ const theme = createTheme({
         marginRight: '10px',
         color: '#bf6336',
       },
+    },
+    footer: {
+      fontFamily: "'Prompt', sans-serif",
+      fontSize: '0.8em',
     },
   },
 });

@@ -16,7 +16,7 @@ const PickAPost = (data) => {
         borderColor: 'secondary.light',
         borderRadius: '10px',
         background: '#FFFFFF',
-        margin: '40px 0',
+        margin: '20px 0 40px',
         padding: '16px',
         width: { xs: '100%', lg: '30%' },
       }}

@@ -13,8 +13,8 @@ const BlogPage = () => {
           borderTop: { lg: '8px solid' },
           borderBottom: { lg: '8px solid' },
           borderColor: { lg: 'primary.main' },
-          padding: '30px 0',
-          marginTop: '30px',
+          padding: { xs: '10px 0', sm: '20px 0' },
+
           display: { lg: 'flex' },
           flexDirection: { lg: 'row-reverse' },
         }}
