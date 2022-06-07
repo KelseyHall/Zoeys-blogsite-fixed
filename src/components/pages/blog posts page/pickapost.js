@@ -30,6 +30,8 @@ const PickAPost = (data) => {
             key={data.date}
             sx={{
               padding: '0 ',
+              flexDirection: 'column',
+              alignItems: 'stretch',
             }}
           >
             <ListItemButton
@@ -45,7 +47,7 @@ const PickAPost = (data) => {
                 sx={{ paddingRight: '10px' }}
               />
               <ListItemText
-                sx={{ textAlign: { xs: 'right', sm: 'left' } }}
+                sx={{ textAlign: { xs: 'right', lg: 'left' } }}
                 primary={data.date}
               />
             </ListItemButton>

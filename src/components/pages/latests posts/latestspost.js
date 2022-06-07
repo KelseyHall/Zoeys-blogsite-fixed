@@ -17,7 +17,8 @@ const LatestsBlogPost = () => {
         justifyContent: { md: 'space-around' },
       }}
     >
-      {blogEntryData.map(({ ...data }, index) => {
+      {/*Limit map to show only 2 */}
+      {blogEntryData.slice(0, 2).map(({ ...data }, index) => {
         // console.log(index);
         return (
           <LatestBlogPostComponent

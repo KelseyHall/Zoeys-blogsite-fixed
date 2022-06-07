@@ -10,6 +10,7 @@ let blogEntryData = rawBlogEntryData.sort((a, b) => b.date - a.date);
 client
   .getEntries()
   .then(function (entries) {
+    console.log(blogEntryData);
     // pushes each blog post into an array of objects
     entries.items.map((entry) => {
       // console.log(entry);

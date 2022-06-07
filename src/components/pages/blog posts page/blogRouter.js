@@ -34,7 +34,11 @@ const sortPostToDisplay = (title, date) => {
 const Post = ({ title, date }) => {
   const blogEntry = blogEntryData.find(sortPostToDisplay(title, date));
   const blogNumber = blogEntryData.indexOf(blogEntry);
-  const PrevPost = () => console.log(blogNumber); //`?title=${blogEntry.urlLink}&date=${blogEntry.date}`
+  const prevPost = (title, date) =>
+    `?title=${title.replaceAll(' ', '-')}&date=${date}`;
+  const nextPost = (title, date) =>
+    `?title=${title.replaceAll(' ', '-')}&date=${date}`;
+
   return (
     <Box component="div">
       <Container
@@ -65,12 +69,40 @@ const Post = ({ title, date }) => {
         maxWidth="xl"
         sx={{ display: 'flex', justifyContent: 'space-between' }}
       >
-        <Button onClick={PrevPost} color="secondary">{`<-- Prev Post`}</Button>
+        {
+          //hide if first post
+          blogNumber < 1 ? (
+            ''
+          ) : (
+            <Button
+              component={Link}
+              to={prevPost(
+                blogEntryData[blogNumber - 1].title,
+                blogEntryData[blogNumber - 1].date
+              )}
+              color="secondary"
+            >{`<-- Prev Post`}</Button>
+          )
+        }
 
         <Typography variant="body1">{`${blogNumber < 1 ? 1 : blogNumber + 1}/${
           blogEntryData.length
         }`}</Typography>
-        <Button color="secondary">{`Next Post -->`}</Button>
+        {
+          //hide if last post
+          blogNumber + 1 === blogEntryData.length ? (
+            ''
+          ) : (
+            <Button
+              component={Link}
+              to={nextPost(
+                blogEntryData[blogNumber + 1].title,
+                blogEntryData[blogNumber + 1].date
+              )}
+              color="secondary"
+            >{`Next Post -->`}</Button>
+          )
+        }
       </Container>
     </Box>
   );
