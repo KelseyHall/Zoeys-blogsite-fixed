@@ -4,11 +4,6 @@ import blogEntryData from '../../../contentful';
 import { Container } from '@mui/material';
 
 const LatestsBlogPost = () => {
-  //   console.log(blogEntryData.indexOf());
-  //   const borderColour = () =>{
-  //       if(blogEntryData.indexOf())
-  //   }
-
   return (
     <Container
       sx={{
@@ -17,7 +12,8 @@ const LatestsBlogPost = () => {
         justifyContent: { md: 'space-around' },
       }}
     >
-      {blogEntryData.map(({ ...data }, index) => {
+      {/*Limit map to show only 2 */}
+      {blogEntryData.slice(0, 2).map(({ ...data }, index) => {
         // console.log(index);
         return (
           <LatestBlogPostComponent
