@@ -24,13 +24,21 @@ const PickAPost = (data) => {
       <Typography variant="h5" sx={{ padding: '0 16px' }}>
         Pick a post
       </Typography>
-      <List sx={{ columnCount: { sm: '2', lg: '1' }, flexWrap: 'wrap' }}>
+      <List
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: { xs: '100%', md: '50% 50%', lg: '100%' },
+          // columnCount: { xs: '1', sm: '2', lg: '1' },
+          // flexWrap: 'wrap',
+          alignItems: 'stretch',
+        }}
+      >
         {data.data.map(({ ...data }) => (
           <ListItem
             key={data.date}
             sx={{
               padding: '0 ',
-              flexDirection: 'column',
+              flexDirection: 'row',
               alignItems: 'stretch',
             }}
           >
@@ -40,12 +48,21 @@ const PickAPost = (data) => {
               sx={{
                 flexDirection: { lg: 'column' },
                 alignItems: { lg: 'left' },
+                width: '100%',
               }}
             >
               <ListItemText
-                primary={data.title}
-                sx={{ paddingRight: '10px' }}
-              />
+                sx={{
+                  paddingRight: '10px',
+                  whiteSpace: 'nowrap',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                }}
+              >
+                <Typography variant="body1" sx={{ display: 'inline-block' }}>
+                  {data.title}
+                </Typography>
+              </ListItemText>
               <ListItemText
                 sx={{ textAlign: { xs: 'right', lg: 'left' } }}
                 primary={data.date}
