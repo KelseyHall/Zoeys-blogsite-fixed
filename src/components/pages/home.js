@@ -24,8 +24,14 @@ const HomePage = () => {
           alt="Zoey who is a Cockapoo puppy, looking at the camera sticking her tongue out while sitting on a bridge"
         />
       </Container>
-      {/*<div class="triangle-down"></div>
-  <div class="upside-down-triangle"></div>*/}
+      <Box
+        sx={{
+          background: 'var(--accents-banners)',
+          height: '81px',
+          width: '100%',
+          clipPath: 'polygon(50% 100%, 4% 0, 96% 0)',
+        }}
+      ></Box>
       <Typography variant="h1">Latest Blog Post</Typography>
       <LatestsBlogPost />
       <Box sx={{ display: 'flex' }}>
