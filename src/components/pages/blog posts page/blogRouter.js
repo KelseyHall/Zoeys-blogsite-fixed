@@ -92,6 +92,16 @@ const Post = ({ title, date }) => {
           //hide if last post
           blogNumber + 1 === blogEntryData.length ? (
             ''
+          ) : //determine if default post
+          blogNumber === -1 ? (
+            <Button
+              component={Link}
+              to={nextPost(
+                blogEntryData[blogNumber + 2].title,
+                blogEntryData[blogNumber + 2].date
+              )}
+              color="secondary"
+            >{`Next Post -->`}</Button>
           ) : (
             <Button
               component={Link}
