@@ -10,6 +10,7 @@ const LatestsBlogPost = () => {
         display: 'flex',
         flexDirection: { xs: 'column', md: 'row' },
         justifyContent: { md: 'space-around' },
+        paddingBottom: '20px',
       }}
     >
       {/*Limit map to show only 2 */}

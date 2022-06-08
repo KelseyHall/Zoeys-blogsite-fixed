@@ -11,15 +11,19 @@ const HomePage = () => {
         className="home-banner-img"
         sx={{
           overflow: 'hidden',
-          maxHeight: { xs: '300px', md: '600px' },
+          maxHeight: { xs: '250px', sm: '300px', md: '500px' },
+          minHeight: '200px',
           display: 'block',
         }}
       >
-        <img
+        <Box
+          component="img"
           src={homebanner}
-          style={{
-            objectPosition: 'left 25%',
+          sx={{
             width: '100%',
+            position: 'relative',
+            top: { sm: '-250px', md: '-300px' },
+            bottom: { xs: '60px' },
           }}
           alt="Zoey who is a Cockapoo puppy, looking at the camera sticking her tongue out while sitting on a bridge"
         />
@@ -39,7 +43,7 @@ const HomePage = () => {
           component={Link}
           to={'/blog'}
           variant="contained"
-          sx={{ margin: '0 auto' }}
+          sx={{ margin: '20px auto' }}
         >
           See all post
         </Button>
