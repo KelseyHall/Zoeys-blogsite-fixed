@@ -5,6 +5,7 @@
   --logo-subline-color: #150f0a;
   --main-background: #edf1f2;
   --accents-banners: #783e23;
+  --active-link: #228280;
 }
 /* h1 {
   font-family: 'Dancing Script', cursive;
@@ -44,4 +45,9 @@ body {
 }
 .smallSignature {
   font-family: 'BerkShire Swash', cursive;
+}
+.active button {
+  font-weight: 800;
+  text-decoration: underline;
+  color: var(--active-link);
 }

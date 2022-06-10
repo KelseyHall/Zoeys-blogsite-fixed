@@ -93,7 +93,15 @@ const Header = () => {
             <Drawer anchor="left" open={state} onClose={toggleDrawer(false)}>
               {pages.map((page) => (
                 <MenuItem key={page.title} onClick={toggleDrawer(false)}>
-                  <NavLink to={page.path} style={{ textDecoration: 'none' }}>
+                  <NavLink
+                    to={page.path}
+                    style={{
+                      textDecoration: 'none',
+                      '.active': {
+                        color: '#F00',
+                      },
+                    }}
+                  >
                     <Typography textAlign="center" color="secondary.main">
                       {page.title}
                     </Typography>
@@ -126,7 +134,12 @@ const Header = () => {
               <NavLink
                 key={page.title}
                 to={page.path}
-                style={{ textDecoration: 'none' }}
+                style={{
+                  textDecoration: 'none',
+                  '.active': {
+                    color: '#F00',
+                  },
+                }}
               >
                 <Button
                   onClick={toggleDrawer(false)}
@@ -135,6 +148,9 @@ const Header = () => {
                     my: 2,
                     color: 'secondary.main',
                     display: 'block',
+                    '.active': {
+                      color: '#F00',
+                    },
                   }}
                 >
                   {page.title}
