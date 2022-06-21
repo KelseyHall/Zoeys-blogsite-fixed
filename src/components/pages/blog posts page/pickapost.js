@@ -19,15 +19,21 @@ const PickAPost = ({ blogEntryData }) => {
         margin: '20px 0 40px',
         padding: '16px',
         width: { xs: '100%', lg: '30%' },
+        maxHeight: { xs: '250px', lg: '400px' },
+        overflow: 'auto',
       }}
     >
-      <Typography variant="h5" sx={{ padding: '0 16px' }}>
+      <Typography
+        variant="h5"
+        sx={{ padding: '0 16px', textAlign: { lg: 'center' } }}
+      >
         Pick a post
       </Typography>
       <List
         sx={{
           display: 'grid',
           gridTemplateColumns: { xs: '100%', md: '50% 50%', lg: '100%' },
+
           // columnCount: { xs: '1', sm: '2', lg: '1' },
           // flexWrap: 'wrap',
           alignItems: 'stretch',
@@ -47,14 +53,17 @@ const PickAPost = ({ blogEntryData }) => {
               to={`?title=${data.urlLink}&date=${data.date}`}
               sx={{
                 flexDirection: { lg: 'column' },
-                alignItems: { lg: 'left' },
                 width: '100%',
+                alignItems: { lg: 'flex-start' },
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
               }}
             >
               <ListItemText
                 sx={{
-                  paddingRight: '10px',
-                  whiteSpace: 'nowrap',
+                  marginRight: '10px',
+                  whiteSpace: { xs: 'nowrap', lg: 'normal' },
+
                   overflow: 'hidden',
                   textOverflow: 'ellipsis',
                 }}
