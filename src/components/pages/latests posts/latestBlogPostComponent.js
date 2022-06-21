@@ -48,6 +48,7 @@ const LatestBlogPostComponent = (data) => {
             height: { xs: '250px' },
             gridRow: { sm: '1/  25' },
             gridColumn: { sm: indexOddorEven(data.index) ? '1/6' : '4/9' },
+            objectPosition: 'top',
           }}
           image={data.img}
           alt={data.imgAlt}
