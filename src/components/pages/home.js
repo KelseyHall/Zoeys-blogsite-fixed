@@ -6,7 +6,7 @@ import homebanner from '../../img/home-banner.jpeg';
 import LatestsBlogPost from './latests posts/latestspost';
 const HomePage = ({ blogEntryData }) => {
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="lg">
       <Container
         className="home-banner-img"
         sx={{

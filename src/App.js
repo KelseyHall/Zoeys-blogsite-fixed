@@ -9,6 +9,7 @@ import Footer from './components/footer';
 
 import { useEffect, useState } from 'react';
 import useContentful from './contentful';
+import { Container } from '@mui/material';
 
 function App() {
   const [blogEntryData, setBlogEntryData] = useState([]);
@@ -21,12 +22,12 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <div className="App">
+      <Container type="div" className="App" sx={{ minHeight: '93vh' }}>
         <BrowserRouter>
           <Header />
           <RouterSwitch blogEntryData={blogEntryData} />
         </BrowserRouter>
-      </div>
+      </Container>
       <Footer />
     </ThemeProvider>
   );
