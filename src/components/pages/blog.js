@@ -1,10 +1,10 @@
 import { Container, Typography } from '@mui/material';
 import PickAPost from './blog posts page/pickapost';
-import blogEntryData from '../../contentful';
+// import blogEntryData from '../../contentful';
 // import IndividualPost from './blog posts page/individualPost';
 import BlogPostRouter from './blog posts page/blogRouter';
 
-const BlogPage = () => {
+const BlogPage = ({ blogEntryData }) => {
   return (
     <Container maxWidth="xl">
       <Typography variant="h1">Blog Posts</Typography>
@@ -19,8 +19,8 @@ const BlogPage = () => {
           flexDirection: { lg: 'row-reverse' },
         }}
       >
-        <PickAPost data={blogEntryData} />
-        <BlogPostRouter />
+        <PickAPost blogEntryData={blogEntryData} />
+        <BlogPostRouter blogEntryData={blogEntryData} />
       </Container>
     </Container>
   );

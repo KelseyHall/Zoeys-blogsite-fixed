@@ -4,11 +4,18 @@ import AboutMe from '../pages/aboutme';
 import BlogPage from '../pages/blog';
 import HomePage from '../pages/home';
 
-const RouterSwitch = () => {
+const RouterSwitch = ({ blogEntryData }) => {
   return (
     <Routes>
-      <Route exact path="/" element={<HomePage />}></Route>
-      <Route path="/blog" element={<BlogPage />}></Route>
+      <Route
+        exact
+        path="/"
+        element={<HomePage blogEntryData={blogEntryData} />}
+      ></Route>
+      <Route
+        path="/blog"
+        element={<BlogPage blogEntryData={blogEntryData} />}
+      ></Route>
       <Route path="/aboutme" element={<AboutMe />}></Route>
     </Routes>
   );
