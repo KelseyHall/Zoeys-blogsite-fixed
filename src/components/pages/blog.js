@@ -6,7 +6,7 @@ import BlogPostRouter from './blog posts page/blogRouter';
 
 const BlogPage = ({ blogEntryData }) => {
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="lg">
       <Typography variant="h1">Blog Posts</Typography>
       <Container
         sx={{
