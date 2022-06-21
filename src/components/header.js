@@ -6,9 +6,9 @@ import {
   Toolbar,
   Typography,
   Container,
-  Menu,
   MenuItem,
   Button,
+  Drawer,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { NavLink } from 'react-router-dom';
@@ -19,15 +19,26 @@ const pages = [
 ];
 
 const Header = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  // const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [state, setState] = React.useState(false);
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
+  const toggleDrawer = (open) => (event) => {
+    if (
+      event.type === 'keydown' &&
+      (event.key === 'Tab' || event.key === 'Shift')
+    ) {
+      return;
+    }
+    setState(open);
   };
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
+  // const handleOpenNavMenu = (event) => {
+  //   setAnchorElNav(event.currentTarget);
+  // };
+
+  // const handleCloseNavMenu = () => {
+  //   setAnchorElNav(null);
+  // };
 
   return (
     <AppBar position="static" color="transparent" sx={{ boxShadow: 'none' }}>
@@ -46,45 +57,51 @@ const Header = () => {
             </a>
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="primary"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
-            >
+          <IconButton
+            size="large"
+            aria-label="account of current user"
+            aria-controls="menu-appbar"
+            aria-haspopup="true"
+            onClick={toggleDrawer(true)}
+            color="primary"
+            sx={{ display: { xs: 'flex', sm: 'none' } }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Box
+            onClick={toggleDrawer(false)}
+            sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'none' } }}
+          >
+            {/*<Menu
+          id="menu-appbar"
+          anchorEl={anchorElNav}
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'left',
+          }}
+          keepMounted
+          transformOrigin={{
+            vertical: 'top',
+            horizontal: 'left',
+          }}
+          open={Boolean(anchorElNav)}
+          onClose={handleCloseNavMenu}
+          sx={{
+            display: { xs: 'block', md: 'none' },
+          }}
+        >*/}
+            <Drawer anchor="left" open={state} onClose={toggleDrawer(false)}>
               {pages.map((page) => (
-                <MenuItem key={page.title} onClick={handleCloseNavMenu}>
-                  <NavLink to={page.path} style={{ textDecoration: 'none' }}>
+                <MenuItem key={page.title} onClick={toggleDrawer(false)}>
+                  <NavLink to={page.path} className="nav-link">
                     <Typography textAlign="center" color="secondary.main">
                       {page.title}
                     </Typography>
                   </NavLink>
                 </MenuItem>
               ))}
-            </Menu>
+            </Drawer>
+            {/*</Menu>*/}
           </Box>
           <Typography
             variant="h6"
@@ -106,18 +123,17 @@ const Header = () => {
             }}
           >
             {pages.map((page) => (
-              <NavLink
-                key={page.title}
-                to={page.path}
-                style={{ textDecoration: 'none' }}
-              >
+              <NavLink key={page.title} to={page.path}>
                 <Button
-                  onClick={handleCloseNavMenu}
+                  onClick={toggleDrawer(false)}
                   className="nav-buttons"
                   sx={{
                     my: 2,
                     color: 'secondary.main',
                     display: 'block',
+                    '.active': {
+                      color: '#F00',
+                    },
                   }}
                 >
                   {page.title}
