@@ -46,7 +46,12 @@ body {
 .smallSignature {
   font-family: 'BerkShire Swash', cursive;
 }
-.active button {
+
+a {
+  text-decoration: none;
+}
+.active button,
+a.nav-link.active p {
   font-weight: 800;
   text-decoration: underline;
   color: var(--active-link);

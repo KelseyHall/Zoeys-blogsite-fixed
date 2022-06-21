@@ -93,15 +93,7 @@ const Header = () => {
             <Drawer anchor="left" open={state} onClose={toggleDrawer(false)}>
               {pages.map((page) => (
                 <MenuItem key={page.title} onClick={toggleDrawer(false)}>
-                  <NavLink
-                    to={page.path}
-                    style={{
-                      textDecoration: 'none',
-                      '.active': {
-                        color: '#F00',
-                      },
-                    }}
-                  >
+                  <NavLink to={page.path} className="nav-link">
                     <Typography textAlign="center" color="secondary.main">
                       {page.title}
                     </Typography>
@@ -131,16 +123,7 @@ const Header = () => {
             }}
           >
             {pages.map((page) => (
-              <NavLink
-                key={page.title}
-                to={page.path}
-                style={{
-                  textDecoration: 'none',
-                  '.active': {
-                    color: '#F00',
-                  },
-                }}
-              >
+              <NavLink key={page.title} to={page.path}>
                 <Button
                   onClick={toggleDrawer(false)}
                   className="nav-buttons"
