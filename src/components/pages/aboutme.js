@@ -5,7 +5,7 @@ import ZoeySignature from '../signature';
 
 const AboutMe = () => {
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="lg">
       <Typography
         variant="h1"
         sx={{
