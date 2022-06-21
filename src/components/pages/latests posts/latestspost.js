@@ -1,9 +1,8 @@
 import * as React from 'react';
 import LatestBlogPostComponent from './latestBlogPostComponent';
-import blogEntryData from '../../../contentful';
 import { Container } from '@mui/material';
 
-const LatestsBlogPost = () => {
+const LatestsBlogPost = ({ blogEntryData }) => {
   return (
     <Container
       sx={{

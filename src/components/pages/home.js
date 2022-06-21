@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import homebanner from '../../img/home-banner.jpeg';
 
 import LatestsBlogPost from './latests posts/latestspost';
-const HomePage = () => {
+const HomePage = ({ blogEntryData }) => {
   return (
     <Container maxWidth="xl">
       <Container
@@ -36,8 +36,8 @@ const HomePage = () => {
           clipPath: 'polygon(50% 100%, 4% 0, 96% 0)',
         }}
       ></Box>
-      <Typography variant="h1">Latest Blog Post</Typography>
-      <LatestsBlogPost />
+      <Typography variant="h1">Latest Blog Post </Typography>
+      <LatestsBlogPost blogEntryData={blogEntryData} />
       <Box sx={{ display: 'flex' }}>
         <Button
           component={Link}

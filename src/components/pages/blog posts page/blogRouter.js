@@ -2,11 +2,11 @@ import { Container, Typography, Button } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import blogEntryData from '../../../contentful';
+// import blogEntryData from '../../../contentful';
 import IndividualPost from '../blog posts page/individualPost';
 
-const BlogPostRouter = () => {
-  return <BlogPost />;
+const BlogPostRouter = ({ blogEntryData }) => {
+  return <BlogPost blogEntryData={blogEntryData} />;
 };
 
 const useQuery = () => {
@@ -14,9 +14,15 @@ const useQuery = () => {
   return React.useMemo(() => new URLSearchParams(search), [search]);
 };
 
-const BlogPost = () => {
+const BlogPost = ({ blogEntryData }) => {
   let query = useQuery();
-  return <Post title={query.get('title')} date={query.get('date')} />;
+  return (
+    <Post
+      blogEntryData={blogEntryData}
+      title={query.get('title')}
+      date={query.get('date')}
+    />
+  );
 };
 
 const sortPostToDisplay = (title, date) => {
@@ -31,7 +37,8 @@ const sortPostToDisplay = (title, date) => {
     return;
   };
 };
-const Post = ({ title, date }) => {
+const Post = ({ blogEntryData, title, date }) => {
+  console.log(blogEntryData);
   const blogEntry = blogEntryData.find(sortPostToDisplay(title, date));
   const blogNumber = blogEntryData.indexOf(blogEntry);
   const prevPost = (title, date) =>

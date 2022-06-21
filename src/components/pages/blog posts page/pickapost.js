@@ -8,7 +8,7 @@ import {
 } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-const PickAPost = (data) => {
+const PickAPost = ({ blogEntryData }) => {
   return (
     <Container
       sx={{
@@ -33,7 +33,7 @@ const PickAPost = (data) => {
           alignItems: 'stretch',
         }}
       >
-        {data.data.map(({ ...data }) => (
+        {blogEntryData.map(({ ...data }) => (
           <ListItem
             key={data.date}
             sx={{
