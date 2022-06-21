@@ -38,7 +38,7 @@ const sortPostToDisplay = (title, date) => {
   };
 };
 const Post = ({ blogEntryData, title, date }) => {
-  console.log(blogEntryData);
+  // console.log(blogEntryData);
   const blogEntry = blogEntryData.find(sortPostToDisplay(title, date));
   const blogNumber = blogEntryData.indexOf(blogEntry);
   const prevPost = (title, date) =>
