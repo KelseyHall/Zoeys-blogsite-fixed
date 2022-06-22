@@ -1,5 +1,3 @@
-// import TempImg from '../../../img/Temp-IMG_4083.JPG';
-
 import {
   Card,
   CardActionArea,
@@ -11,10 +9,9 @@ import { Link } from 'react-router-dom';
 
 const indexOddorEven = (num) => num % 2 === 0;
 
-const LatestBlogPostComponent = (data) => {
+const LatestBlogPostComponent = ({ data }) => {
   return (
     <Card
-      key={data.title}
       sx={{
         display: 'flex',
         width: { md: '42%' },
@@ -25,7 +22,6 @@ const LatestBlogPostComponent = (data) => {
           : 'secondary.light',
         margin: '13px 0',
         padding: { xs: '10px', sm: '20px', md: '10px' },
-        // maxHeight: '400px',
       }}
     >
       <CardActionArea
@@ -71,7 +67,6 @@ const LatestBlogPostComponent = (data) => {
             gutterBottom
             variant="h5"
             sx={{
-              //   position: 'absolute',
               whiteSpace: 'nowrap',
               overflow: 'hidden',
               textOverflow: 'ellipsis',

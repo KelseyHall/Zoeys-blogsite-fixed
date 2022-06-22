@@ -7,16 +7,7 @@
   --accents-banners: #783e23;
   --active-link: #228280;
 }
-/* h1 {
-  font-family: 'Dancing Script', cursive;
-} */
 
-/* h2 {
-  font-family: 'Prompt', sans-serif;
-}
-body {
-  font-family: 'Ubuntu', sans-serif;
-} */
 body {
   background-color: var(--main-background);
 }
@@ -50,8 +41,7 @@ body {
 a {
   text-decoration: none;
 }
-.active button,
-a.nav-link.active p {
+.active button {
   font-weight: 800;
   text-decoration: underline;
   color: var(--active-link);

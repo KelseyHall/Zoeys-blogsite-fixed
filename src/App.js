@@ -1,5 +1,5 @@
 import { ThemeProvider } from '@emotion/react';
-// import { Typography } from '@mui/material';
+
 import { BrowserRouter } from 'react-router-dom';
 import Header from './components/header';
 import theme from './styles/theme';
