@@ -8,7 +8,6 @@ const useContentful = () => {
   const sanitizedEntries = (entries) =>
     // pushes each blog post into an array of objects
     entries.items.map((entry) => {
-      // console.log(entry);
       //makes readable date
       const entryDate = new Date(entry.fields.dateOfPost);
       const day = entryDate.getDate();

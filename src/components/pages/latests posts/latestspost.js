@@ -13,19 +13,8 @@ const LatestsBlogPost = ({ blogEntryData }) => {
       }}
     >
       {/*Limit map to show only 2 */}
-      {blogEntryData.slice(0, 2).map(({ ...data }, index) => {
-        // console.log(index);
-        return (
-          <LatestBlogPostComponent
-            date={data.date}
-            img={data.img}
-            imgAlt={data.imgAlt}
-            post={data.post}
-            title={data.title}
-            key={data.date}
-            index={index}
-          />
-        );
+      {blogEntryData.slice(0, 2).map((data) => {
+        return <LatestBlogPostComponent data={data} key={data.date} />;
       })}
     </Container>
   );

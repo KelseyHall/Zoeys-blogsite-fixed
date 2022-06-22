@@ -1,17 +1,10 @@
 import React from 'react';
-import {
-  AppBar,
-  Box,
-  IconButton,
-  Toolbar,
-  Typography,
-  Container,
-  MenuItem,
-  Button,
-  Drawer,
-} from '@mui/material';
+import { AppBar, Box, IconButton, Toolbar, Container } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { NavLink } from 'react-router-dom';
+
+import NavDrawer from './nav-components/nav-drawer';
+import { DesktopLogo, MobileLogo } from './nav-components/header-logo';
+import Navigation from './nav-components/navigation';
 
 const pages = [
   { title: 'about me', path: '/aboutme' },
@@ -19,7 +12,6 @@ const pages = [
 ];
 
 const Header = () => {
-  // const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [state, setState] = React.useState(false);
 
   const toggleDrawer = (open) => (event) => {
@@ -32,31 +24,11 @@ const Header = () => {
     setState(open);
   };
 
-  // const handleOpenNavMenu = (event) => {
-  //   setAnchorElNav(event.currentTarget);
-  // };
-
-  // const handleCloseNavMenu = () => {
-  //   setAnchorElNav(null);
-  // };
-
   return (
     <AppBar position="static" color="transparent" sx={{ boxShadow: 'none' }}>
       <Container maxWidth="lg">
         <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            className="headerLogo"
-            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-          >
-            <a id="logo" href="/" rel="home">
-              <span className="mainLogo">Zoey's Corner</span>
-              <span className="logoSubline">day in the life</span>
-            </a>
-          </Typography>
-
+          {/*mobile nav */}
           <IconButton
             size="large"
             aria-label="account of current user"
@@ -68,53 +40,14 @@ const Header = () => {
           >
             <MenuIcon />
           </IconButton>
-          <Box
-            onClick={toggleDrawer(false)}
-            sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'none' } }}
-          >
-            {/*<Menu
-          id="menu-appbar"
-          anchorEl={anchorElNav}
-          anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'left',
-          }}
-          keepMounted
-          transformOrigin={{
-            vertical: 'top',
-            horizontal: 'left',
-          }}
-          open={Boolean(anchorElNav)}
-          onClose={handleCloseNavMenu}
-          sx={{
-            display: { xs: 'block', md: 'none' },
-          }}
-        >*/}
-            <Drawer anchor="left" open={state} onClose={toggleDrawer(false)}>
-              {pages.map((page) => (
-                <MenuItem key={page.title} onClick={toggleDrawer(false)}>
-                  <NavLink to={page.path} className="nav-link">
-                    <Typography textAlign="center" color="secondary.main">
-                      {page.title}
-                    </Typography>
-                  </NavLink>
-                </MenuItem>
-              ))}
-            </Drawer>
-            {/*</Menu>*/}
-          </Box>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            className="headerLogo"
-            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-          >
-            <a id="logo" href="/" rel="home">
-              <span className="mainLogo">Zoey's Corner</span>
-              <span className="logoSubline">day in the life</span>
-            </a>
-          </Typography>
+
+          <NavDrawer pages={pages} state={state} toggleDrawer={toggleDrawer} />
+
+          <MobileLogo />
+
+          {/*desktop nav */}
+          <DesktopLogo />
+
           <Box
             sx={{
               flexGrow: 1,
@@ -122,24 +55,7 @@ const Header = () => {
               justifyContent: 'flex-end',
             }}
           >
-            {pages.map((page) => (
-              <NavLink key={page.title} to={page.path}>
-                <Button
-                  onClick={toggleDrawer(false)}
-                  className="nav-buttons"
-                  sx={{
-                    my: 2,
-                    color: 'secondary.main',
-                    display: 'block',
-                    '.active': {
-                      color: '#F00',
-                    },
-                  }}
-                >
-                  {page.title}
-                </Button>
-              </NavLink>
-            ))}
+            <Navigation pages={pages} toggleDrawer={toggleDrawer} />
           </Box>
         </Toolbar>
       </Container>

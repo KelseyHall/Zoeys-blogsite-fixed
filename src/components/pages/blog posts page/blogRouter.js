@@ -2,7 +2,7 @@ import { Container, Typography, Button } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-// import blogEntryData from '../../../contentful';
+
 import IndividualPost from '../blog posts page/individualPost';
 
 const BlogPostRouter = ({ blogEntryData }) => {
@@ -38,7 +38,6 @@ const sortPostToDisplay = (title, date) => {
   };
 };
 const Post = ({ blogEntryData, title, date }) => {
-  // console.log(blogEntryData);
   const blogEntry = blogEntryData.find(sortPostToDisplay(title, date));
   const blogNumber = blogEntryData.indexOf(blogEntry);
   const prevPost = (title, date) =>
@@ -49,7 +48,7 @@ const Post = ({ blogEntryData, title, date }) => {
   return (
     <Box component="div">
       <Container
-        maxWidth="xl"
+        maxWidth="lg"
         sx={{
           borderTop: { xs: '8px solid', lg: 'none' },
           borderBottom: { xs: '8px solid', lg: 'none' },
@@ -73,7 +72,7 @@ const Post = ({ blogEntryData, title, date }) => {
         )}
       </Container>
       <Container
-        maxWidth="xl"
+        maxWidth="lg"
         sx={{ display: 'flex', justifyContent: 'space-between' }}
       >
         {
