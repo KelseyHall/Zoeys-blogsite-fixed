@@ -28,6 +28,7 @@ const theme = createTheme({
     h1: {
       fontFamily: "'Dancing Script', cursive",
       fontSize: '2.8em',
+
       textAlign: 'center',
       margin: '30px 0 10px',
       ':after': {

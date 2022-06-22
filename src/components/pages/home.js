@@ -14,6 +14,7 @@ const HomePage = ({ blogEntryData }) => {
           maxHeight: { xs: '250px', sm: '300px', md: '500px' },
           minHeight: '200px',
           display: 'block',
+          padding: '0',
         }}
       >
         <Box
@@ -36,7 +37,9 @@ const HomePage = ({ blogEntryData }) => {
           clipPath: 'polygon(50% 100%, 4% 0, 96% 0)',
         }}
       ></Box>
-      <Typography variant="h1">Latest Blog Post </Typography>
+      <Typography variant="h1" sx={{ fontSize: { xs: '2.2em', sm: '2.8em' } }}>
+        Latest Blog Post
+      </Typography>
       <LatestsBlogPost blogEntryData={blogEntryData} />
       <Box sx={{ display: 'flex' }}>
         <Button
