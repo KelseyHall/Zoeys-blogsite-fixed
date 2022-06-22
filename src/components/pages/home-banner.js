@@ -2,9 +2,9 @@ import homebanner from '../../img/home-banner.jpeg';
 import { Container } from '@mui/material';
 import { Box } from '@mui/system';
 const Homebanner = () => (
-  <Box>
+  <Box sx={{ padding: '0' }}>
     <Container
-      className="home-banner-img"
+      id="home-banner-img"
       sx={{
         overflow: 'hidden',
         maxHeight: { xs: '250px', sm: '300px', md: '500px' },
@@ -30,10 +30,7 @@ const Homebanner = () => (
         background: 'var(--accents-banners)',
         height: '81px',
         width: '100%',
-        clipPath: {
-          xs: 'polygon(50% 100%, 0% 0, 100% 0)',
-          sm: 'polygon(50% 100%, 4% 0, 96% 0)',
-        },
+        clipPath: 'polygon(50% 100%, 0% 0, 100% 0)',
       }}
     ></Box>
   </Box>
