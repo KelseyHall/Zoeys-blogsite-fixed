@@ -63,7 +63,7 @@ const PickAPost = ({ blogEntryData }) => {
                 sx={{
                   marginRight: '10px',
                   whiteSpace: { xs: 'nowrap', lg: 'normal' },
-
+                  width: { xs: '70%', lg: '100%' },
                   overflow: 'hidden',
                   textOverflow: 'ellipsis',
                 }}
