@@ -22,7 +22,11 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container type="div" className="App" sx={{ minHeight: '93vh' }}>
+      <Container
+        type="div"
+        className="App"
+        sx={{ minHeight: '93vh', padding: '0' }}
+      >
         <BrowserRouter>
           <Header />
           <RouterSwitch blogEntryData={blogEntryData} />
